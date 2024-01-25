@@ -7,6 +7,22 @@ PowerSense enables you to parallel multiple batteries in your battery-powered eq
 - Open-source hardware
 - Can intelligently switch between 2 connected batteries to bring the voltage difference to within ±1V then connect them in parallel
 - Batteries with different chemistries, voltage levels, and cell counts can be connected.
+### About Powersense
+It has many easily accessible communication ports on the back of the board which follow this pinout: 
+
+![ABTPWRSNE](https://media.discordapp.net/attachments/816082953951248444/1197322446848671744/Pinout.png?ex=65c412ec&is=65b19dec&hm=ece25aaffc83977ef0373e48d69353606a8d1c992eb53918d5ed3ea9ad6d81ce&=&format=webp&quality=lossless&width=587&height=683)
+
+The reference design is as follows: 
+
+![ref](https://cdn.discordapp.com/attachments/816082953951248444/1200065227845275679/image.png?ex=65c4d2d6&is=65b25dd6&hm=ff0c038ae8cd874b6b887567d546aeb923c1450ad9b7486d41f1acc84395bbaa&)
+
+![ref](https://cdn.discordapp.com/attachments/816082953951248444/1200065357424111716/image.png?ex=65c4d2f5&is=65b25df5&hm=f44aff1328a108413be25787455eed86cf44af2a6c0409752b32c16bbf0b038a&)
+
+> [!Tip]
+> The exposed traces connecting the mosfets must be reinforced with solid core copper wire.
+
+> [!WARNING]
+> Fuses labelled (F3,F1,F2) must be populated with the appropriate fuse for your use-case leaving these unpopulated may cause damage. 
 
 ## competition
 
@@ -32,15 +48,28 @@ They have a small integrated IC internally that uses P-channel mosfets like Rita
 #### Advantages and disadvantages
 ![AlieAD](https://media.discordapp.net/attachments/816082953951248444/1199885462316273705/image.png?ex=65c42b6b&is=65b1b66b&hm=72bde0050724ae7a2f749754ddbe0c7b1fb10f433b2f315f34eafe8945639199&=&format=webp&quality=lossless)
 
+## Specification
+With the traces reinforced the Powersense device is rated for up to **40A**.
+
+It is also rated for a maximum voltage of **134V**.
+
+Physical switching turn on delay is **30ns** and the turn off delay is **48ns** 
+
+Maximum and minimum operating tempratures include **-20°C to 100°C**
+
+> [!CAUTION]
+> All of the tests above were done at 40A, VGS=10V, VDS=30V unless mentioned otherwise.
+> The current limit and voltage limit have not been tested as of yet it will be updated in the future.
+
 ## Firmware details
 The firmware will not be open-sourced with the Powersense device. **However the disclaimer still applies**. I will make it as easy as possible for anyone to create a custom firmware for example there exists an Arduino-like API for the STM8 family of microprocessors such as [Sduino](https://tenbaht.github.io/sduino/) which will be easy to pick up and work with. however, the STM8 can be programmed via ST visual develop and COSMIC C compiler.
 
 ### pin definitions
 
-![Pindef](https://media.discordapp.net/attachments/816082953951248444/1199890074259705866/image.png?ex=65c42fb6&is=65b1bab6&hm=434b1faa2c772a8640c2849c5a6c59286c7bc4180c9f6652de8decbeed7e5a02&=&format=webp&quality=lossless)
+![Pindef](https://media.discordapp.net/attachments/816082953951248444/1200050308936650833/image.png?ex=65c4c4f1&is=65b24ff1&hm=7a765471cf4c8eae26b9387c7018464fb8a77b65591461d2f7b28f06e481df94&=&format=webp&quality=lossless)
 
 > [!NOTE]
-> The four analogue inputs of the STM8 (A2, A1) are multiplexed between STM8 physical pin 20, 19 respectively. 
+> The analogue inputs of the STM8 (A2, A1) are multiplexed between STM8 physical pin 20, 19 respectively. 
 
 ### Voltage accusation calculations
 
@@ -70,6 +99,13 @@ This number is how much the original voltage is divided by going through the on-
 **2.55** is the minimum voltage that the AMC will output this can be seen on the datasheet for the IC.
 
 **3.95** is the maximum voltage that the AMC will output this can be seen on the datasheet for the IC.
+
+## BOM
+![BOM](https://media.discordapp.net/attachments/816082953951248444/1200061823047700510/image.png?ex=65c4cfaa&is=65b25aaa&hm=09ad8b1e2ceff142a2a5bc72532f66a56c9b1d676b5b1841ba9a2cc77f819ba5&=&format=webp&quality=lossless)
+
+LCSC numbers can be used on LCSC.com to purchase these components.
+> [!NOTE]
+> WX-DC12003 buck converter can be purchased from any other retailer such as aliexpress.com
 
 
 > [!IMPORTANT]
