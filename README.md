@@ -1,7 +1,9 @@
 # Powersense
 
 ## Introduction
-PowerSense enables you to parallel multiple batteries in your battery-powered equipment. It has several advantages over other devices that do the same thing.
+PowerSense is designed for personal light electric vehicles, aimed at optimizing battery usage through intelligent switching. This addresses the common challenge of limited battery life in electric vehicles by efficiently managing power distribution between multiple batteries. The system not only prolongs the range of each journey but also contributes to the longevity of the batteries themselves. This repository provides detailed information on the device's design, functionality, and instructions for implementation. It serves as a valuable resource for enthusiasts and professionals interested in enhancing electric vehicle performance through advanced battery management.
+<sub>Abstract written by [lekrsu](https://github.com/lekrsu)</sub>
+### Advantages
 - High voltage & current support
 - Utilises N-channel mosfets for efficient low-side switching
 - Open-source hardware
