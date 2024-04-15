@@ -12,13 +12,13 @@ PowerSense is designed for personal light electric vehicles, aimed at optimizing
 ### About Powersense
 It has many easily accessible communication ports on the back of the board which follow this pinout: 
 
-![ABTPWRSNE](https://media.discordapp.net/attachments/816082953951248444/1197322446848671744/Pinout.png?ex=65c412ec&is=65b19dec&hm=ece25aaffc83977ef0373e48d69353606a8d1c992eb53918d5ed3ea9ad6d81ce&=&format=webp&quality=lossless&width=587&height=683)
+![ABTPWRSNE](https://github.com/rasil1127/Powersense/blob/main/Pinout.png)
 
 The reference design is as follows: 
 
-![ref](https://cdn.discordapp.com/attachments/816082953951248444/1200065227845275679/image.png?ex=65c4d2d6&is=65b25dd6&hm=ff0c038ae8cd874b6b887567d546aeb923c1450ad9b7486d41f1acc84395bbaa&)
+![ref](https://github.com/rasil1127/Powersense/blob/main/ref_top.jpg)
 
-![ref](https://cdn.discordapp.com/attachments/816082953951248444/1200065357424111716/image.png?ex=65c4d2f5&is=65b25df5&hm=f44aff1328a108413be25787455eed86cf44af2a6c0409752b32c16bbf0b038a&)
+![ref](https://github.com/rasil1127/Powersense/blob/main/ref_bottom.jpg)
 
 > [!Tip]
 > The exposed traces connecting the mosfets must be reinforced with solid core copper wire.
@@ -40,7 +40,7 @@ Source [rita_manual_gen6_en.pdf](https://public.embedden.com/Rita/Docs/English/r
 It will switch to whatever battery has a higher voltage and drain that first. It reads both batteries' voltages to determine which one has a higher voltage potential, the same as what Powersense does. However, it is using P-channel mosfets as explained above by the original creator "*switching their positive power leads*" It cannot be N-channel mosfets since those would require the positives to be common and negatives to be switched. It also emulates BMSes for the scooter lineup by NINEBOT and XIAOMI.
 
 #### Advantages and disadvantages
-![RitaAD](https://media.discordapp.net/attachments/816082953951248444/1199885421094654082/image.png?ex=65c42b61&is=65b1b661&hm=b6f9a830095a822535ad37fae55222e75469591bc772b40bc36fa02cd35ac359&=&format=webp&quality=lossless)
+![RitaAD](https://github.com/rasil1127/Powersense/blob/main/rita_ad.png)
 
 ### Aliexpress battery switchers
 #### What do they do?
@@ -48,7 +48,7 @@ It will switch to whatever battery has a higher voltage and drain that first. It
 They have a small integrated IC internally that uses P-channel mosfets like Rita to switch between batteries positive with the ground being common. this approach is not that great since P-channel mosfets are inefficient since they usually have a higher RDS<sub>on</sub> resistance.
 
 #### Advantages and disadvantages
-![AlieAD](https://media.discordapp.net/attachments/816082953951248444/1199885462316273705/image.png?ex=65c42b6b&is=65b1b66b&hm=72bde0050724ae7a2f749754ddbe0c7b1fb10f433b2f315f34eafe8945639199&=&format=webp&quality=lossless)
+![AlieAD](https://github.com/rasil1127/Powersense/blob/main/alie_ad.png)
 
 ## Specification
 With the traces reinforced the Powersense device is rated for up to **40A**.
@@ -68,7 +68,7 @@ The firmware will not be open-sourced with the Powersense device. **However the 
 
 ### pin definitions
 
-![Pindef](https://media.discordapp.net/attachments/816082953951248444/1200050308936650833/image.png?ex=65c4c4f1&is=65b24ff1&hm=7a765471cf4c8eae26b9387c7018464fb8a77b65591461d2f7b28f06e481df94&=&format=webp&quality=lossless)
+![Pindef](https://github.com/rasil1127/Powersense/blob/main/pin_def.png)
 
 > [!NOTE]
 > The analogue inputs of the STM8 (A2, A1) are multiplexed between STM8 physical pin 20, 19 respectively. 
@@ -103,7 +103,7 @@ This number is how much the original voltage is divided by going through the on-
 **3.95** is the maximum voltage that the AMC will output this can be seen on the datasheet for the IC.
 
 ## BOM
-![BOM](https://media.discordapp.net/attachments/816082953951248444/1200061823047700510/image.png?ex=65c4cfaa&is=65b25aaa&hm=09ad8b1e2ceff142a2a5bc72532f66a56c9b1d676b5b1841ba9a2cc77f819ba5&=&format=webp&quality=lossless)
+![BOM](https://github.com/rasil1127/Powersense/blob/main/bom.png)
 
 LCSC numbers can be used on LCSC.com to purchase these components.
 > [!NOTE]
